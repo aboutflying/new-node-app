@@ -1,0 +1,32 @@
+{
+  "name": "new-node-app",
+  "version": "0.0.1",
+  "node_deb": {
+    "entrypoints": {
+      "daemon": "index.js"
+    }
+  },
+  "description": "hello world app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aboutflying/new-node-app.git"
+  },
+  "keywords": [
+    "node",
+    "hello",
+    "world"
+  ],
+  "author": "Bill Reynolds",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aboutflying/new-node-app/issues"
+  },
+  "homepage": "https://github.com/aboutflying/new-node-app#readme",
+  "dependencies": {
+    "node-deb": "^0.10.7"
+  }
+}
