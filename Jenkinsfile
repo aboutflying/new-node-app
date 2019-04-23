@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Tag image') {
             steps {
-                sh 'sudo docker image tag invisitr/node-demo-app:latest invisitr/node-demo-app:v002'
+                sh 'sudo docker image tag invisitr/node-demo-app:latest invisitr/node-demo-app:v003'
             }
         }
         stage('Push to DockerHub') {
