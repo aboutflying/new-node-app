@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh '''
                     sudo docker login --username=invisitr --password=${dockerhubpw}
-                    sudo docker push invisitr/node-demo-app:v002
+                    sudo docker push invisitr/node-demo-app:v003
                 '''
             }
         }
