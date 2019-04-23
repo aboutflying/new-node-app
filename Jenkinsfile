@@ -5,7 +5,7 @@ pipeline {
         aws_secret_key = credentials('aws_secret_key')
     }
     stages {
-        stage('Docker container run') {
+        stage('Build image') {
             steps {
                 sh 'sudo docker run -v "$PWD":/root builddep bash /root/install.sh'
             }
