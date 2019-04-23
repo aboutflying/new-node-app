@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/aboutflying/new-node-app#readme",
   "dependencies": {
-    "node-deb": "^0.10.7"
+    "express": "^4.16.4"
   }
 }
