@@ -1,32 +1,17 @@
 pipeline {
     agent any
-    environment {
-        aws_access_key = credentials('aws_access_key')
-        aws_secret_key = credentials('aws_secret_key')
-    }
     stages {
         stage('Build image') {
             steps {
-                sh 'sudo docker run -v "$PWD":/root builddep bash /root/install.sh'
+                sh 'sudo docker image build -t invisitr/node-demo-app -f Dockerfile .'
             }
         }
-        stage('Configure packer.json') {
+        stage('Push to DockerHub') {
             steps {
                 sh '''
-                    deb_name=$(ls *.deb)
-                    sed -i "s/built_deb/${deb_name}/g" packer.json
+                    sudo docker push invisitr/node-demo-app:latest
                 '''
             }
-        }
-        stage('Packer') {
-            steps {
-                sh 'packer build -machine-readable -var aws_access_key=${aws_access_key} -var aws_secret_key=${aws_secret_key} packer.json'
-            }
-        }
-    }
-    post {
-        success {
-            archiveArtifacts 'manifest.json'
         }
     }
 }
